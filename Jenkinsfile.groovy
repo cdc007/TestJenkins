@@ -1,6 +1,3 @@
-@Library ('TestJenkins@master') _
-
-
 
 node{
 
@@ -16,8 +13,9 @@ node{
         workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
         path= "${workspace}/RequestXML/test.xml"
-
-        def data = readFile(file: '/testzorg.txt')
+        def data = readFile(file: "${path}")
+        
+        echo "${data}"
 
     }
     stage('Audit tools') {
