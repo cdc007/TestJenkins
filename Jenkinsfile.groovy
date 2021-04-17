@@ -19,7 +19,16 @@ node{
 
         def response =sh (
                 script: '''
-curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' --header 'Content-Type: application/xml' --data-raw "${content}"
+curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
+--header 'Content-Type: application/xml' \
+--header 'Cookie: PHPSESSID=ntu2dvvi6a480ipqsluadifshe' \
+--data-raw '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
+<InventoryUpdate>
+<Username>fchen7274@gmail.com</Username>
+<Password>1qaz!QAZ</Password>
+<Server>Test</Server>
+</InventoryUpdate>'
             ''',
                 returnStdout: true
         ).trim()
