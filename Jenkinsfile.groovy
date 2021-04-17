@@ -1,6 +1,5 @@
-
 node{
-    
+
     stage('prepare'){
         deleteDir()
         checkout scm
@@ -10,13 +9,22 @@ node{
         echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhh"
         println sh(script: 'ls -lrt', returnStdout: true).trim()
 
-        workspace = env.WORKSPACE
+        def workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        path= "${workspace}/RestfulXML"
-        content = readFile("${path}/test.xml")
-        
-         echo "${content}"
+        def path= "${workspace}/RestfulXML"
+        def content = readFile("${path}/test.xml")
 
+        echo "${content}"
+
+        def response =sh (
+                script: '''
+                curl --location --request GET 'https://api.shipwire.com/exec/InventoryServices.php' --header 'Content-Type: application/xml' 
+             --data-raw "${content}"
+            ''',
+                returnStdout: true
+        ).trim()
+
+        echo "${response}"
     }
     stage('Audit tools') {
 
@@ -53,5 +61,4 @@ node{
     }
 
 }
-
 
