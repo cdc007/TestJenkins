@@ -19,10 +19,8 @@ node{
         echo "${content}"
 
         def response =sh (
-                script: '''
-curl -s -X POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
---header 'Content-Type: application/xml' \
--d @$file 
+                script: ''' 
+curl -s -X POST https://api.beta.shipwire.com/exec/InventoryServices.php –data "@${file}" -H "Accept: application/xml"
             ''',
                 returnStdout: true
         ).trim()
@@ -59,6 +57,10 @@ curl -s -X POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
         //     echo response
         //    echo "sssssssssssssssssssssssssssssssssssssss"
         //          }
+       // #!/bin/sh +x
+//curl -s -X POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
+//--header 'Content-Type: application/xml' \
+//-d @$file 
 
 
     }
