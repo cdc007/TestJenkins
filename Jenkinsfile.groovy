@@ -1,6 +1,8 @@
 
 
-
+@groovy.transform.Field def workspace
+    @groovy.transform.Field def path
+     @groovy.transform.Field def file
 
 node{
 
@@ -14,11 +16,11 @@ node{
         println sh(script: 'ls -lrt', returnStdout: true).trim()
 
   
-        def workspace = env.WORKSPACE
+         workspace = env.WORKSPACE
         sh "chmod +x ${workspace}"
         echo "Current workspace is ${env.WORKSPACE}"
-        def path= "${workspace}/RestfulXML" 
-        def file= "${workspace}/RestfulXML/test.xml"
+         path= "${workspace}/RestfulXML" 
+         file= "${workspace}/RestfulXML/test.xml"
         final String content = readFile("${path}/test.xml")
 
         echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
