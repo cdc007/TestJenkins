@@ -24,9 +24,8 @@ node{
 
         def response =sh (
                 script: ''' 
-curl -s --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
---header 'Content-Type: application/xml' \
---data-raw "${content}"
+curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data @$file https://api.beta.shipwire.com/exec/
+InventoryServices.php
             ''',
                 returnStdout: true
         ).trim()
