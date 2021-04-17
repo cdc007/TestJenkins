@@ -20,12 +20,11 @@ node{
         def file= "${workspace}/RestfulXML/test.xml"
         final String content = readFile("${path}/test.xml")
 
-        echo "${content}"
+        echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
         def response =sh (
-                script: ''' 
-curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data @$file https://api.beta.shipwire.com/exec/
-InventoryServices.php
+                script: ''' #!/bin/sh/ +x
+curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data @$file https://api.beta.shipwire.com/exec/InventoryServices.php
             ''',
                 returnStdout: true
         ).trim()
