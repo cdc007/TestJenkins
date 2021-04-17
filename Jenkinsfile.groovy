@@ -20,9 +20,9 @@ node{
 
         def response =sh (
                 script: '''
-curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
+curl -s -X POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
--d "@${context}"
+-d @$context 
             ''',
                 returnStdout: true
         ).trim()
