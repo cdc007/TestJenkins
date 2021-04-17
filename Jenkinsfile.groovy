@@ -15,6 +15,7 @@ node{
 
   
         def workspace = env.WORKSPACE
+        sh "chmod +x ${workspace}"
         echo "Current workspace is ${env.WORKSPACE}"
         def path= "${workspace}/RestfulXML" 
         def file= "${workspace}/RestfulXML/test.xml"
