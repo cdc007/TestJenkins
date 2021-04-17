@@ -13,8 +13,8 @@ node{
         echo "Current workspace is ${env.WORKSPACE}"
         def content= "${workspace}/RestfulXML/test.xml"
       //  def content = readFile("${path}/test.xml")
-
-        echo "${conten}"
+            println content
+       // echo "${conten}"
 
         def response =sh (
                 script: '''
