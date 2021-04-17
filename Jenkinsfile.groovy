@@ -26,7 +26,7 @@ node{
         echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
        re = sh (
-             script: "curl -X POST --header 'Content-Type:text/xml;charset=UTF-8' --data  '@${env.WORKSPACE}/test.xml' https://api.beta.shipwire.com/exec/InventoryServices.ph",
+             script: "curl -X POST --header 'Content-Type:text/xml;charset=UTF-8' --data  '@${path}/test.xml' https://api.beta.shipwire.com/exec/InventoryServices.ph",
              returnStdout: true
         ).trim()
 
