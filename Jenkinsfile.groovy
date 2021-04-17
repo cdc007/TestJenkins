@@ -1,8 +1,8 @@
 
 node{
-
+    
     stage('prepare'){
-
+        deletedir
         checkout scm
         println sh(script: 'pwd', returnStdout: true).trim()
         println env.GITTY
@@ -13,9 +13,9 @@ node{
         workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
         path= "${workspace}/RequestXML/test.xml"
-        def data = readFile(file: "${path}")
+     //   def data = readFile(file: "${path}")
         
-        echo "${data}"
+ //       echo "${data}"
 
     }
     stage('Audit tools') {
