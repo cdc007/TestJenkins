@@ -25,7 +25,7 @@ node{
 
         echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
-       sh (
+       re = sh (
                 script: ''' #!/bin/bash/ +x
                   echo "${file}"
 curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@${file}' https://api.beta.shipwire.com/exec/InventoryServices.php
@@ -33,7 +33,7 @@ curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@${file}' h
                 returnStdout: true
         ).trim()
 
-        echo "${response}"
+        println(re)
     }
     stage('Audit tools') {
 
