@@ -28,7 +28,9 @@ node{
         url="https://api.beta.shipwire.com/exec/InventoryServices.ph"
 
        re = sh (
-           script: "curl -X POST $url --header 'Content-Type:text/xml;charset=UTF-8' --data  '@${file}' ",
+           script: "curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
+--header 'Content-Type: application/xml' \
+           --data-raw '@${file}' ",
              returnStdout: true
         ).trim()
 
