@@ -21,13 +21,7 @@ node{
                 script: '''
 curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
---data-raw '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
-<InventoryUpdate>
-<Username>fchen7274@gmail.com</Username>
-<Password>1qaz!QAZ</Password>
-<Server>Test</Server>
-</InventoryUpdate>'
+--data-raw ${content}
             ''',
                 returnStdout: true
         ).trim()
