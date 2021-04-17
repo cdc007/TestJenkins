@@ -25,7 +25,7 @@ node{
 
         def response =sh (
                 script: ''' #!/bin/sh/ +x
-curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@/var/jenkins_home/workspace/demo1/RestfulXML/test.xml' https://api.beta.shipwire.com/exec/InventoryServices.php
+curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@"${file}"' https://api.beta.shipwire.com/exec/InventoryServices.php
             ''',
                 returnStdout: true
         ).trim()
