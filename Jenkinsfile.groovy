@@ -9,12 +9,13 @@ node{
         echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhh"
         println sh(script: 'ls -lrt', returnStdout: true).trim()
 
+  
         def workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
         def path= "${workspace}/RestfulXML"
         def content = readFile("${path}/test.xml")
-         
-        echo "${conten}"
+
+        echo "${content}"
 
         def response =sh (
                 script: '''
@@ -27,12 +28,11 @@ node{
 <Password>yourpassword</Password>
 <Server>Test</Server>
 </InventoryUpdate>'
-
             ''',
                 returnStdout: true
         ).trim()
 
-        echo "${response}"
+       // echo "${response}"
     }
     stage('Audit tools') {
 
