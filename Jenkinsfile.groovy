@@ -24,7 +24,7 @@ node{
         echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
         def response =sh (
-                script: ''' #!/bin/sh/ +x
+                script: ''' #!/bin/bash/ +x
 curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@${file}' https://api.beta.shipwire.com/exec/InventoryServices.php
             ''',
                 returnStdout: true
