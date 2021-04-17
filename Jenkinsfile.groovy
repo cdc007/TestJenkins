@@ -28,7 +28,7 @@ node{
        re = sh (
                 script: ''' #!/bin/bash/ +x
                   echo "${file}"
-curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@${file}' https://api.beta.shipwire.com/exec/InventoryServices.php
+curl -X POST --header "Content-Type:text/xml;charset=UTF-8" --data  '@${path}/test.xml' https://api.beta.shipwire.com/exec/InventoryServices.php
             ''',
                 returnStdout: true
         ).trim()
