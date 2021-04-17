@@ -1,3 +1,7 @@
+
+
+
+
 node{
 
     stage('prepare'){
@@ -14,15 +18,15 @@ node{
         echo "Current workspace is ${env.WORKSPACE}"
         def path= "${workspace}/RestfulXML" 
         def file= "${workspace}/RestfulXML/test.xml"
-        def content = readFile("${path}/test.xml")
+        final String content = readFile("${path}/test.xml")
 
         echo "${content}"
 
         def response =sh (
                 script: ''' 
-curl -s -X POST https://api.beta.shipwire.com/exec/InventoryServices.php \
---form attachedfile=${file} \
---header 'application/xml' \
+ curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
+--header 'Content-Type: application/xml' \
+--data-raw ${content}
             ''',
                 returnStdout: true
         ).trim()
