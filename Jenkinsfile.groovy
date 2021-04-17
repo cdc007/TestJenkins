@@ -24,9 +24,11 @@ node{
         final String content = readFile("${path}/test.xml")
 
         echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        
+        url="https://api.beta.shipwire.com/exec/InventoryServices.ph"
 
        re = sh (
-           script: "curl -X POST --header 'Content-Type:text/xml;charset=UTF-8' --data  '@${file}' 'https://api.beta.shipwire.com/exec/InventoryServices.ph'",
+           script: "curl -X POST $url --header 'Content-Type:text/xml;charset=UTF-8' --data  '@${file}' ",
              returnStdout: true
         ).trim()
 
