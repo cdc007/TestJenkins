@@ -26,7 +26,7 @@ curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServ
                 returnStdout: true
         ).trim()
 
-       // echo "${response}"
+        echo "${response}"
     }
     stage('Audit tools') {
 
