@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RateRequest SYSTEM "https://www.shipwire.com/exec/download/RateRequest.dtd">
+<RateRequest>
+<Username>api_user@example.com</Username>
+<Password>yourpassword</Password>
+<Order id="12579">
+<Warehouse>0</Warehouse>
+<AddressInfo type="ship">
+<Address1>321 Foo bar lane</Address1>
+<Address2>Apartment #2</Address2>
+<City>Nowhere</City>
+<State>CA</State>
+<Country>US</Country>
+<Zip>12345</Zip>
+</AddressInfo>
+<Item num="0">
+<Code>12345</Code>
+<Quantity>1</Quantity>
+</Item>
+</Order>
+</RateRequest>
