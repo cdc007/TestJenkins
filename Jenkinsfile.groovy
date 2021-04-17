@@ -11,14 +11,15 @@ node{
 
         def workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        def path= "${workspace}/RestfulXML"
-        def content = readFile("${path}/test.xml")
+        def content= "${workspace}/RestfulXML/test.xml"
+      //  def content = readFile("${path}/test.xml")
 
-        echo "${content}"
+        echo "${conten}"
 
         def response =sh (
                 script: '''
-       curl -s -X POST --header 'Content-Type: application/xml' https://api.shipwire.com/exec/InventoryServices.php 
+
+ curl -s -X POST --header 'Content-Type: application/xml' https://api.shipwire.com/exec/InventoryServices.php 
  -d  "${content}"
                
             ''',
