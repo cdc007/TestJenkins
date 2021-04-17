@@ -2,7 +2,7 @@
 node{
     
     stage('prepare'){
-        deletedir
+        deleteDir()
         checkout scm
         println sh(script: 'pwd', returnStdout: true).trim()
         println env.GITTY
