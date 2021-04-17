@@ -21,7 +21,7 @@ node{
                 script: '''
 curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
---data-raw "${content}"
+-d "${content}"
             ''',
                 returnStdout: true
         ).trim()
