@@ -12,10 +12,10 @@ node{
 
         workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        path= "${workspace}/RequestXML/test.xml"
-     //   def data = readFile(file: "${path}")
+        path= "${workspace}/RequestXML"
+        content = readFile("${path}/test.xml")
         
- //       echo "${data}"
+         echo "${content}"
 
     }
     stage('Audit tools') {
