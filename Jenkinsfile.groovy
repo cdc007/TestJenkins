@@ -18,10 +18,16 @@ node{
 
         def response =sh (
                 script: '''
+            curl --location --request GET 'https://api.shipwire.com/exec/InventoryServices.php' 
+--header 'Content-Type: application/xml' 
+--data-raw '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
+<InventoryUpdate>
+<Username>api_user@example.com</Username>
+<Password>yourpassword</Password>
+<Server>Test</Server>
+</InventoryUpdate>'
 
- curl -s -X POST --header 'Content-Type: application/xml' https://api.shipwire.com/exec/InventoryServices.php 
- -d  "${content}"
-               
             ''',
                 returnStdout: true
         ).trim()
