@@ -30,7 +30,7 @@ node{
        re = sh (
            script: "curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
-           --data-raw '@${file}' ",
+           -d  @${file} ",
              returnStdout: true
         ).trim()
 
