@@ -19,7 +19,7 @@ node{
 
         def response =sh (
                 script: '''
-            curl --location --request GET 'https://api.shipwire.com/exec/InventoryServices.php' 
+            curl --location --request GET 'https://api.beta.shipwire.com/exec/RateServices.php' 
 --header 'Content-Type: application/xml' 
 --data-raw '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE InventoryUpdate SYSTEM "https://www.shipwire.com/exec/download/InventoryUpdate.dtd">
