@@ -1,8 +1,8 @@
 
 
-@groovy.transform.Field def workspace
-    @groovy.transform.Field def path
-     @groovy.transform.Field def file
+//@groovy.transform.Field def workspace
+ //   @groovy.transform.Field def path
+   //  @groovy.transform.Field def file
 
 node{
 
