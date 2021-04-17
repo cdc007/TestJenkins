@@ -17,7 +17,7 @@ node{
 
   
          workspace = env.WORKSPACE
-        sh "chmod +x ${workspace}"
+        sh "chmod 755 ${workspace}"
         echo "Current workspace is ${env.WORKSPACE}"
          path= "${workspace}/RestfulXML" 
          file= "${workspace}/RestfulXML/test.xml"
