@@ -22,7 +22,7 @@ node{
                 script: '''
 curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
--d "@${file}"
+-d "@${context}"
             ''',
                 returnStdout: true
         ).trim()
