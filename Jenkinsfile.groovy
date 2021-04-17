@@ -21,7 +21,7 @@ node{
         def response =sh (
                 script: ''' 
 curl -s -X POST https://api.beta.shipwire.com/exec/InventoryServices.php \
---form attachedfile=@${file} \
+--form attachedfile=${file} \
 --header 'application/xml' \
             ''',
                 returnStdout: true
