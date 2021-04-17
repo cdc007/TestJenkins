@@ -18,8 +18,8 @@ node{
 
         def response =sh (
                 script: '''
-                curl --location --request GET 'https://api.shipwire.com/exec/InventoryServices.php' --header 'Content-Type: application/xml' 
-             --data-raw "${content}"
+                 curl --request GET 'https://api.shipwire.com/exec/InventoryServices.php' --header 'Content-Type: application/xml' 
+             -d "${content}"
             ''',
                 returnStdout: true
         ).trim()
