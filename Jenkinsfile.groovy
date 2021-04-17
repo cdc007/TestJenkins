@@ -12,7 +12,7 @@ node{
 
         workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        path= "${workspace}/RequestfulXML"
+        path= "${workspace}/RestfulXML"
         content = readFile("${path}/test.xml")
         
          echo "${content}"
