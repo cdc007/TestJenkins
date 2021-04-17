@@ -12,7 +12,8 @@ node{
   
         def workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        def path= "${workspace}/RestfulXML"
+        def path= "${workspace}/RestfulXML" 
+        def file= "${workspace}/RestfulXML/test.xml"
         def content = readFile("${path}/test.xml")
 
         echo "${content}"
@@ -21,7 +22,7 @@ node{
                 script: '''
 curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
 --header 'Content-Type: application/xml' \
--d "@${content}"
+-d "@${file}"
             ''',
                 returnStdout: true
         ).trim()
