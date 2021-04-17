@@ -11,10 +11,10 @@ node{
 
         def workspace = env.WORKSPACE
         echo "Current workspace is ${env.WORKSPACE}"
-        def content= "${workspace}/RestfulXML/test.xml"
-      //  def content = readFile("${path}/test.xml")
-            println content
-       // echo "${conten}"
+        def path= "${workspace}/RestfulXML"
+        def content = readFile("${path}/test.xml")
+         
+        echo "${conten}"
 
         def response =sh (
                 script: '''
