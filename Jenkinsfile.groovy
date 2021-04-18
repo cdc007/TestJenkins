@@ -1,78 +1,13 @@
 
-
 //@groovy.transform.Field def workspace
- //   @groovy.transform.Field def path
-   //  @groovy.transform.Field def file
+//   @groovy.transform.Field def path
+//  @groovy.transform.Field def file
 
-node{
+@Library('commonLib@master') _
 
-    stage('prepare'){
-        deleteDir()
-        checkout scm
-        println sh(script: 'pwd', returnStdout: true).trim()
-        println env.GITTY
+timestamps {
 
-        echo "hhhhhhhhhhhhhhhhhhhhhhhhhhhh"
-        println sh(script: 'ls -lrt', returnStdout: true).trim()
-
-  
-         workspace = env.WORKSPACE
-        sh "chmod 755 ${workspace}"
-        echo "Current workspace is ${env.WORKSPACE}"
-         path= "${workspace}/RestfulXML" 
-         file= "${workspace}/RestfulXML/test.xml"
-        final String content = readFile("${path}/test.xml")
-
-        echo "${file} eeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-        
-        url="https://api.beta.shipwire.com/exec/InventoryServices.ph"
-
-       re = sh (
-           script: "curl --location --request POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
---header 'Content-Type: application/xml' \
-           -d  @${file} ",
-             returnStdout: true
-        ).trim()
-
-        println(re)
-    }
-    stage('Audit tools') {
-
-        sh '''
-                           git version
-                           
-                        '''
-
-
-    }
-    stage('build'){
-
-        // echo "Build version ${version} with stuffix ${VERSION_RC}"
-        //sh '''
-        //                         echo "run test.sh"
-        //
-        //                       ./test.sh
-        //                    '''
-        //          testshare message: 'hello frank'
-        //          println this.getClass()
-
-        //     def response = sh(script: 'curl https://cat-fact.herokuapp.com/facts/', returnStdout: true)
-        //       sh "curl https://cat-fact.herokuapp.com/facts/"
-        //    script {
-        //     final String url = "https://dog.ceo/api/breeds/list/all"
-
-        //     final String response = sh(script: "curl -s $url", returnStdout: true).trim()
-
-        //     echo response
-        //    echo "sssssssssssssssssssssssssssssssssssssss"
-        //          }
-       // #!/bin/sh +x
-//curl -s -X POST 'https://api.beta.shipwire.com/exec/InventoryServices.php' \
-//--header 'Content-Type: application/xml' \
-//-d @$file 
-
-
-    }
-
+       SharedLib{
+           url:'https://api.beta.shipwire.com/exec/InventoryServices.ph'
+       }
 }
-
