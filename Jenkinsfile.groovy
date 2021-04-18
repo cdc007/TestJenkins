@@ -7,7 +7,7 @@
 
 timestamps {
 
-       SharedLib{
-           url: 'https://api.beta.shipwire.com/exec/InventoryServices.ph'
-       }
+       SharedLib(
+           url: ["https://api.beta.shipwire.com/exec/InventoryServices.ph"]
+       )
 }
