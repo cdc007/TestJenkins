@@ -5,11 +5,12 @@
 
 @Library('commonLib@master') _
 
+def map = [name:"Jerry", age: 42, city: "New York", hobby:"Singing"]
+
 timestamps {
 
        SharedLib(
-           url: "https://api.beta.shipwire.com/exec/InventoryServices.php"
-              
-         
+           url: "https://api.beta.shipwire.com/exec/InventoryServices.php",
+           approvers:"${map}"
        )
 }
