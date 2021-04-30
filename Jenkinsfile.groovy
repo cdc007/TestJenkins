@@ -11,6 +11,6 @@ timestamps {
 
        SharedLib(
            url: "https://api.beta.shipwire.com/exec/InventoryServices.php",
-              approvers::"${map1}"
+              approvers:"${map1}"
        )
 }
