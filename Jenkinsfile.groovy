@@ -11,6 +11,6 @@ timestamps {
 
        SharedLib(
            url: "https://api.beta.shipwire.com/exec/InventoryServices.php",
-              approvers:"[name:Jerry, age: 42, city:New York, hobby:Singing]"
+              approvers:"[group1:Irene, group2:frank]"
        )
 }
