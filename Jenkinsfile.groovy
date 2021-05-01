@@ -11,6 +11,6 @@ timestamps {
 
        SharedLib(
            url: "https://api.beta.shipwire.com/exec/InventoryServices.php",
-              approvers:"[group1:Irene,group2:frank]"
+              approvers:"[group1:"Irene",group2:"frank"]"
        )
 }
